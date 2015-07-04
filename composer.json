@@ -1,0 +1,15 @@
+{
+    "name": "xorth/wp-plugin-track",
+    "description": "Add CTR statistics for posts",
+    "type": "wordpress-plugin",
+    "license": "proprietary",
+    "authors": [
+        {
+            "name": "Jorge Cortés",
+            "email": "jorge.cortes@gmail.com"
+        }
+    ],
+    "require": {
+        "composer/installers": "~1.0"
+    }
+}

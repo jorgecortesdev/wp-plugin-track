@@ -1,0 +1,32 @@
+.text-left {
+    text-align: left;
+}
+.text-right {
+    text-align: right;
+}
+.text-center {
+    text-align: center;
+}
+.wpp-track-metabox-ctr {
+    margin: 0 auto;
+    border-collapse: collapse;
+}
+.wpp-track-metabox-ctr th {
+    font-weight: bold;
+}
+.wpp-track-metabox-ctr td, th {
+    padding: 5px;
+    border-bottom: 1px solid silver;
+    height: 20px;
+}
+.wpp-track-metabox-ctr thead th {
+    border-top: 2px solid gray;
+    border-bottom: 2px solid gray;
+}
+.wpp-track-metabox-ctr .highcharts-tooltip>span {
+    background: white;
+    border: 1px solid silver;
+    border-radius: 3px;
+    box-shadow: 1px 1px 2px #888;
+    padding: 8px;
+}

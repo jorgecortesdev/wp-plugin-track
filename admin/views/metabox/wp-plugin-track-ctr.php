@@ -1,0 +1,1 @@
+<div id="container_ctr" style="height: 300px" data-categories="<?=$categories?>" data-series="<?=$series?>"></div>

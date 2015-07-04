@@ -57,7 +57,6 @@ class WP_Plugin_Track_Admin {
                 JOIN {$wpdb->prefix}posts ON ID = post_id
                 WHERE
                     FROM_UNIXTIME(created) >= NOW() - INTERVAL 1 MONTH
-                    AND FROM_UNIXTIME(created) <= NOW()
                 GROUP BY section_id, post_id
             ) c
             ORDER BY ctr DESC;");
@@ -89,7 +88,6 @@ class WP_Plugin_Track_Admin {
                 FROM $table_name
                 WHERE
                     FROM_UNIXTIME(created) >= NOW() - INTERVAL 1 MONTH
-                    AND FROM_UNIXTIME(created) <= NOW()
                 GROUP BY created
             ) c;";
 
@@ -115,14 +113,6 @@ class WP_Plugin_Track_Admin {
 
         $results = array();
 
-        // $sql = "SELECT section_id, post_id, (clicks / impressions) AS ctr, FROM_UNIXTIME(created, '%Y-%m-%d') AS created
-        //     FROM wp_track
-        //     WHERE
-        //         FROM_UNIXTIME(created) >= NOW() - INTERVAL 1 MONTH
-        //         AND FROM_UNIXTIME(created) <= NOW()
-        //     GROUP BY $group_by
-        //     ORDER BY created;";
-
         $sql = "SELECT *, (clicks / impressions) AS ctr
             FROM (
                 SELECT
@@ -131,7 +121,6 @@ class WP_Plugin_Track_Admin {
                 JOIN wp_posts ON ID = post_id
                 WHERE
                     FROM_UNIXTIME(created) >= NOW() - INTERVAL 1 MONTH
-                    AND FROM_UNIXTIME(created) <= NOW()
                 GROUP BY section_id, created, post_id
             ) c;";
 
